@@ -1,6 +1,11 @@
 -- check if the tables been Populated
+--tble #1
 SELECT * FROM happiness;
+
+--table #2
 SELECT * FROM population;
+
+--table #3
 SELECT * FROM life_expectancy;
 
 -- join tables on the country column
