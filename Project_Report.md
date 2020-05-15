@@ -8,7 +8,7 @@ We used three different data sources for our Project.
 -	Splinter was used to automate browser actions like visiting an URL , copying URL and closing it later ;  also, to interact  with items like clicking links based on Text and hrefs. 
 
 ###### TRANSFORM : WHAT DATA TRANSFORMATION  WAS REQUIRED
--	Columns were renamed to 
+-	Columns were renamed
 -	Filtered the specific list of columns that would be worked on.
 -	Converted datatypes to maintain consistency across all Tables.
 -	Truncated symbols in the cells , and kept data like percentages at their face value.
