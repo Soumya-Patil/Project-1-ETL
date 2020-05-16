@@ -4,7 +4,7 @@
 
 We used three different data sources for our Project.
 - Data Source 1 (CSV): https://www.kaggle.com/londeen/world-happiness-report-2020 
-- Data Source 2 (Web Scraping): https://www.worldometers.info/world-population/population-by-country/ 
+- Data Source 2 (Web Scraping): https://www.worldometers.info/
 - Splinter was used to automate browser actions on our second data source like visiting a URL and closing it later; and also to interact with items.
 - Data Source 3 (HTML to CSV): https://www.worldometers.info/demographics/life-expectancy/#countries-ranked-by-life-expectancy
 - Python’s BeautifulSoup library was used to pull data out of the websites. The websites were parsed to navigate and fetch the tables , which were later-on converted to dataframes.
