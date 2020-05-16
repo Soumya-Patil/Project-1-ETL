@@ -1,26 +1,34 @@
-# Project-1-ETL
+# ETL_project
 
-###### EXTRACTION : ORIGINAL DATA SOURCES , DATA FORMATTING 
+### Extraction:
 
 We used three different data sources for our Project.
--	Data Source#1 https://www.kaggle.com/londeen/world-happiness-report-2020
--	Data Source#2 https://www.worldometers.info/world-population/population-by-country/
--	Data Source#3 https://www.worldometers.info/demographics/life-expectancy/#countries-ranked-by-life-expectancy
--	Python’s BeautifulSoup library was used to pull data out of the websites. The websites were parsed to navigate and fetch the tables ,    which were later-on converted to dataframes. 
--	Splinter was used to automate browser actions like visiting an URL , copying URL and closing it later ;  also, to interact  with items like clicking links based on Text and hrefs. 
+- Data Source 1 (CSV): https://www.kaggle.com/londeen/world-happiness-report-2020 
+- Data Source 2 (Web Scraping): https://www.worldometers.info/world-population/population-by-country/ 
+- Splinter was used to automate browser actions on our second data source like visiting a URL and closing it later; and also to interact with items.
+- Data Source 3 (HTML to CSV): https://www.worldometers.info/demographics/life-expectancy/#countries-ranked-by-life-expectancy
+- Python’s BeautifulSoup library was used to pull data out of the websites. The websites were parsed to navigate and fetch the tables , which were later-on converted to dataframes.
 
-###### TRANSFORM : WHAT DATA TRANSFORMATION  WAS REQUIRED
-- Converted data source tables from URL (HTML) to CSVs using  Pandas read_html method.
+
+### Transformation: 
+
+- Converted both the Life Expectancy & Population tables from URL (HTML) sources to CSVs using an F string in Pandas.
 - Cleaned the data by getting rid of NaN values of countries that did not match other tables (ended with 142 countries).
--	Columns were renamed to eliminate spaces 
--	Filtered  specific columns that would be used to load later
--	Converted datatypes to maintain consistency across all Tables.
--	Truncated symbols in the cells , and kept data  like percentages (%) at their face value.
+- Column names were also eliminated for SQL due to space
+- Joined all three tables by renaming columns & joining them based on countries.
+- The Python BeautifulSoup library was used to pull data out of the websites. The websites were parsed to navigate and fetch the tables   which were later-on converted to dataframes. 
+- Converted datatypes to maintain consistencys.
+- Converted the World_Share_Percent column from object datatype to string
+- Stripped the percent symbol from the World Share column and store their face value.
+- Filtered the columns based on what would be used during analysis.
+- Truncated symbols in the cells and kept data like percentages at their face value.
+   
+### Load
 
-###### LOAD : DATABASE CONNECTIONS, AND CHOICE OF DATABASE
+- We chose Postgres as our Database because we did not have to deal with a lot of unstructured and variety of data.
+- A total of 3 tables were created and record insertions was done using pandas.
+- SQLalchemy was used to the connect and access the database with PostgreSQL dialect using psycopg2 as the default DBAPI.
+- Database was Queried using PostgreSQL language.
+- The insertions were later confirmed by reading and joining tables using pandas.
 
-- We chose a relational DBMS , Postgres as our Database because the data mainly read in as tables , and thus it was easier to pre-define   schema, where Postgres is best fit.
-- SQLalchemy was used to the connect and access the database , with PostgreSQL dialect using psycopg2 as the default DBAPI.
-- Database was Queried using PostgreSQL  language.
-- A total of 3 tables were created , and the insertions to the database were made using Pandas. The Schema can be found in the Resources folder .
-- The insertions were later confirmed by reading and joining tables using pandas. 
+
