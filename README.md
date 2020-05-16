@@ -22,5 +22,5 @@ We used three different data sources for our Project.
 - We chose a relational DBMS , Postgres as our Database because the data mainly read in as tables , and thus it was easier to pre-define   schema, where Postgres is best fit.
 - SQLalchemy was used to the connect and access the database , with PostgreSQL dialect using psycopg2 as the default DBAPI.
 - Database was Queried using PostgreSQL  language.
-- A total of 3 tables were created , and the insertions to the database were made using Pandas. The Schema and Query used can be found in the Resources folder.
+- A total of 3 tables were created , and the insertions to the database were made using Pandas. The Schema can be found in the Resources folder .
 - The insertions were later confirmed by reading and joining tables using pandas. 
